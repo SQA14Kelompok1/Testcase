@@ -2,6 +2,7 @@ package com.kalkulator;
 
 
 import Kalkulator.MainPage;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -34,10 +35,14 @@ public class TestCase extends BaseTest{
 
     }
 
-
-
-
-
-
+    @Test
+    public void TC2Perkalian() {
+        MainPage mainPage = new MainPage(webdriver);
+        mainPage.num3();
+        mainPage.mult();
+        mainPage.num8();
+        mainPage.result();
+        Assert.assertEquals("24", mainPage.scr1());
+    }
 
 }
